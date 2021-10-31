@@ -1,0 +1,75 @@
+{
+    "_version": "1.37.0",
+    "sap.app": {
+        "id": "maven.efl.dev",
+        "type": "application",
+        "applicationVersion": {
+            "version": "1.35.0"
+        },
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}"
+    },
+    "sap.ui": {
+        "deviceTypes": {
+            "desktop": true,
+            "phone": true,
+            "tablet": true
+        },
+        "technology": "UI5",
+        "supportedThemes": [
+            "sap_fiori_3_dark"
+        ]
+    },
+    "sap.ui5": {
+        "dependencies": {
+            "minUI5Version": "1.60.0",
+            "libs": {
+                "sap.m": {}
+            }
+        },
+        "resources": {},
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleUrl": "i18n/i18n.properties"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "maven.efl.dev.views.App",
+            "type": "JS",
+            "id": "idAppView"
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewPath": "maven.efl.dev.view",
+                "viewType": "JS",
+                "controlId": "idAppCon",
+                "clearTarget": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "home",
+                    "target": [
+                        "master"
+                    ]
+                }
+            ],
+            "targets": {
+                "master": {
+                    "viewName": "Page",
+                    "viewId": "idPage",
+                    "controlAggregation": "pages"
+                }
+            }
+        }
+    }
+}
